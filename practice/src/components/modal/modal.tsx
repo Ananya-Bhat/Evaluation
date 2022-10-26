@@ -30,7 +30,7 @@ const Modal = () => {
             previousData.push(siteData);
             // console.log('P', previousData);
             localStorage.setItem("users", JSON.stringify(previousData));
-            // window.location.reload();
+            window.location.reload();
         } else {
             alert('Please enter all the required fields');
         }

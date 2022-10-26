@@ -21,11 +21,11 @@ const MainBody = () => {
         localStorage.setItem(existingUser, JSON.stringify([]));
     }
 
-    const previousData: any = JSON.parse(
+    const previousData = JSON.parse(
         localStorage.getItem(existingUser) || '[]'
     );
 
-    console.log("p", previousData);
+    console.log("prev", typeof existingUser);
 
 
     return (
@@ -53,7 +53,7 @@ const MainBody = () => {
                         Social Media
                     </div>
 
-                    <div className="socialMediaCount">{previousData.length}</div>
+                    <div className="socialMediaCount">{existingUser.length}</div>
                     <div className="socialMediaDropDown">
                         <img src={require('../../assets/images/Path Copy.png')} alt="path copy" />
                     </div>
@@ -61,7 +61,7 @@ const MainBody = () => {
 
                 <div className="mainBodyContainerBox">
                     <div className="mainBodyContents">
-                        {JSON.stringify(previousData) === '[]' ? (
+                        {JSON.stringify(existingUser) === '[]' ? (
                             <div className="mainBodyEmpty">
                                 <div>Please Click on the “+” symbol to add sites</div>
                             </div>
@@ -69,7 +69,7 @@ const MainBody = () => {
                             <div className="cardContainer">
                                 {previousData}
 
-                                {previousData.map((element: any, index: number) => {
+                                {existingUser.map((element: any, index: number) => {
                                     console.log(element);
 
                                     return (
@@ -81,7 +81,7 @@ const MainBody = () => {
 
                                 })}
                             </div>
-                        )};
+                        )}
                     </div>
                 </div>
                 {toggle ? (
