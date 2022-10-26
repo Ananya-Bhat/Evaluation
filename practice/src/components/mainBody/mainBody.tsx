@@ -1,0 +1,106 @@
+import './mainBody.css'
+import { useState } from 'react';
+import Modal from '../modal/modal';
+
+const MainBody = () => {
+
+    const [category, setCategory] = useState('Social Media');
+    const [toggle, setToggle] = useState(false);
+    const [modal, setModal] = useState('');
+
+
+    const Category = (e: any) => {
+        setCategory(e.target.value);
+    };
+
+    const existingUser = JSON.parse(localStorage.getItem('users') || '');
+    console.log("existinguser", existingUser);
+
+
+    if (localStorage.getItem(existingUser) === null) {
+        localStorage.setItem(existingUser, JSON.stringify([]));
+    }
+
+    const previousData: any = JSON.parse(
+        localStorage.getItem(existingUser) || '[]'
+    );
+
+    console.log("p", previousData);
+
+
+    return (
+        <div className='mainBody'>
+            <div className="mainBodyContainer">
+                <div className="mainBodyHeader">
+                    <div className="headerTitle">Sites</div>
+
+                    <div className="headerOptions">
+                        <div className="headerSearch">
+                            <input type="text" className="searchBar" placeholder="Search" />
+                            <img src={require('../../assets/images/search.png')} alt="search" className="searchBarIcon" />
+                        </div>
+                        <div className="headerAddButton" >
+                            <img src={require('../../assets/images/add_btn.png')} alt="add" onClick={() => {
+                                setModal('Add Site');
+                                setToggle(true);
+                            }} />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mainBodyCount">
+                    <div className="socialMedia">
+                        Social Media
+                    </div>
+
+                    <div className="socialMediaCount">{previousData.length}</div>
+                    <div className="socialMediaDropDown">
+                        <img src={require('../../assets/images/Path Copy.png')} alt="path copy" />
+                    </div>
+                </div>
+
+                <div className="mainBodyContainerBox">
+                    <div className="mainBodyContents">
+                        {JSON.stringify(previousData) === '[]' ? (
+                            <div className="mainBodyEmpty">
+                                <div>Please Click on the “+” symbol to add sites</div>
+                            </div>
+                        ) : (
+                            <div className="cardContainer">
+                                {previousData}
+
+                                {previousData.map((element: any, index: number) => {
+                                    console.log(element);
+
+                                    return (
+                                        <div key={index} className="cardContents">
+                                            <div>{element.url}</div>
+                                            <div>{element.sitePassword}</div>
+                                        </div>
+                                    );
+
+                                })}
+                            </div>
+                        )};
+                    </div>
+                </div>
+                {toggle ? (
+                    <aside className="modal">
+                        {/* <Modal props={modal} element={Index} /> */}
+                        <Modal />
+                        <div className="closeButton">
+                            <button onClick={() => { setToggle(false); }} className="close">
+                                <img src={require('../../assets/images/close_button.png')} alt="close" />
+                            </button>
+                        </div>
+                    </aside>
+                ) : (
+                    ''
+                )}
+            </div>
+        </div>
+
+    )
+}
+
+export default MainBody

@@ -1,0 +1,151 @@
+.mainBody {
+    position: absolute;
+    top: 4rem;
+    left: 8rem;
+}
+
+.mainBodyContainer {
+    padding: 3em 10em;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainBodyHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerTitle {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 41px;
+    border-bottom: 3px solid var(--active);
+    border-radius: 2px;
+    color: var(--color6);
+    width: 32px;
+    padding-top: 20px;
+}
+
+.headerOptions {
+    display: flex;
+    gap: 38px;
+    position: fixed;
+    right: 12%;
+}
+
+.headerSearch {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.searchBarIcon {
+    position: absolute;
+    right: 0;
+}
+
+.searchBar {
+    outline: none;
+    border-bottom: 1px solid var(--color1);
+    border-width: 0 0 1px 0;
+    background: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+
+.headerAddButton {
+    cursor: pointer;
+}
+
+.mainBodyCount {
+    padding-top: 32px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 17em;
+}
+
+.socialMedia {
+    color: var(--color6);
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 33px;
+}
+
+.socialMediaCount {
+    height: 37px;
+    width: 37px;
+    border: 1px solid var(--color2);
+    background-color: var(--color1);
+    color: var(--color2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.mainBodyEmpty {
+    border-radius: 500px;
+    background-color: var(--topBar);
+    width: 819px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 300px;
+}
+
+.mainBodyEmpty div {
+    color: var(--color6);
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: 36px;
+    text-align: center;
+    padding: 3em 0;
+    max-width: 400px;
+}
+
+.modal {
+    position: absolute;
+    top: 9em;
+    right: 0;
+    left: 15em;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.501);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40em;
+}
+
+.closeButton {
+    position: relative;
+}
+
+.close {
+    border: none;
+    background: none;
+    outline: none;
+    position: absolute;
+    top: -164px;
+    right: -140px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.cardContents {
+    width: 363px;
+    background-color: #ffffff;
+    border-radius: 1em;
+    padding: 12px 20px;
+}
