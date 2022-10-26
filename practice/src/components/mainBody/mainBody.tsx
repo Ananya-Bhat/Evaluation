@@ -53,7 +53,7 @@ const MainBody = () => {
                         Social Media
                     </div>
 
-                    <div className="socialMediaCount">{existingUser.length}</div>
+                    <div className="socialMediaCount">{existingUser.length - 1}</div>
                     <div className="socialMediaDropDown">
                         <img src={require('../../assets/images/Path Copy.png')} alt="path copy" />
                     </div>
@@ -67,15 +67,16 @@ const MainBody = () => {
                             </div>
                         ) : (
                             <div className="cardContainer">
-                                {previousData}
-
                                 {existingUser.map((element: any, index: number) => {
-                                    console.log(element);
-
                                     return (
-                                        <div key={index} className="cardContents">
-                                            <div>{element.url}</div>
-                                            <div>{element.sitePassword}</div>
+                                        <div key={index} className="cardContents" onClick={() => {
+                                            setModal('Edit Site');
+                                            setToggle(true);
+                                        }}>
+                                            <div className="cardUpper">
+                                                <div>{element.url}</div>
+                                                <div>{element.sitePassword}</div>
+                                            </div>
                                         </div>
                                     );
 

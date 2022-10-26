@@ -114,7 +114,6 @@
     right: 0;
     left: 15em;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.501);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,7 +129,7 @@
     background: none;
     outline: none;
     position: absolute;
-    top: -164px;
+    top: -273px;
     right: -140px;
     cursor: pointer;
     z-index: 1;
@@ -139,13 +138,15 @@
 .cardContainer {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
+    flex-direction: row;
+    gap: 50px;
 }
 
 .cardContents {
     width: 363px;
-    background-color: #ffffff;
+    background-color: var(--color2);
     border-radius: 1em;
     padding: 12px 20px;
+    flex-basis: 20%;
+    cursor: pointer;
 }

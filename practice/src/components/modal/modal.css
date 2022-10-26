@@ -23,7 +23,7 @@
 
 .modal-content {
     position: absolute;
-    top: 9em;
+    top: 2em;
     left: 12em;
     transform: translate(-50%, -50%);
     background: var(--color2);
